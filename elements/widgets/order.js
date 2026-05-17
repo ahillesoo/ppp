@@ -937,6 +937,10 @@ export const orderWidgetTemplate = html`
                 <ppp-widget-button
                   appearance="secondary"
                   ?hidden="${(x) => {
+                    if (x.conditionalOrder?.order?.buttonText === false) {
+                      return true;
+                    }
+
                     if (
                       x.orderTypeTabs.activeid !== 'conditional' ||
                       !x.conditionalOrder

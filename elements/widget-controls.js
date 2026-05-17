@@ -2962,6 +2962,9 @@ export class WidgetTrifectaField extends WidgetTextField {
   @observable
   instrument;
 
+  @observable
+  changeViaMouseWheel;
+
   @attr({ mode: 'boolean' })
   market;
 
