@@ -2343,9 +2343,7 @@ export class OrderWidget extends WidgetWithInstrument {
       showAmountSection: this.container.showAmountSection.checked,
       showEstimateSection: this.container.showEstimateSection.checked,
       showShortButton: this.container.showShortButton.checked,
-      conditionalOrders: this.preview
-        ? this.conditionalOrders
-        : this.container.conditionalOrderList.value
+      conditionalOrders: this.container.conditionalOrderList.value
     };
 
     if (this.container.settingsTabs.activeid === 'conditionals') {

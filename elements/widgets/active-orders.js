@@ -561,6 +561,13 @@ export class ActiveOrdersWidget extends WidgetWithInstrument {
     const CO = this.ordersTrader.rawCOToCanonicalCO(newValue);
 
     if (CO?.orderId) {
+      if (
+        this.document.isConditionalOrdersFilterActive &&
+        !this.allowedConditionalOrders.has(CO?.payload.orderId)
+      ) {
+        return;
+      }
+
       this.#conditionalOrdersQueue.push(CO);
       Updates.enqueue(() => this.#drainConditionalOrdersQueue());
     }

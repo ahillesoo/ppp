@@ -143,7 +143,7 @@ export class OrderCustomPage extends Page {
             OrderCustomPage.prototype.validate = async function () {
               await OrderCommonPage.prototype.validate.call(this);
 
-              return this.orderPageDefinition.pageClass.prototype.validate.call(
+              return this.orderPageDefinition.pageClass.prototype.validate?.call(
                 this
               );
             };
