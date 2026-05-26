@@ -1128,14 +1128,16 @@ export const traderPageStyles = css`
   .caps-list li {
     list-style: none;
     background-image: url(${`data:image/svg+xml;base64,${btoa(
-      checkmark.replace(
-        'fill="currentColor"',
-        `fill="${
-          ppp.darkMode
-            ? designTokens.get('palette-green-light-1').$value
-            : designTokens.get('palette-green-dark-2').$value
-        }"`
-      )
+      checkmark
+        .replace(
+          'fill="currentColor"',
+          `fill="${
+            ppp.darkMode
+              ? designTokens.get('palette-green-light-1').$value
+              : designTokens.get('palette-green-dark-2').$value
+          }"`
+        )
+        .replace('<svg', `<svg xmlns="http://www.w3.org/2000/svg"`)
     )}`});
     background-size: 19px 23px;
     background-position-y: -2px;
